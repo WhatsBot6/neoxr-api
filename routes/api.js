@@ -37,7 +37,7 @@ router.get('/yta', async (req, res) => {
 })
 
 router.get('/ytv', async (req, res) => {
-   let { url, quality }} = req.query
+   let { url, quality } = req.query
    if (!url) return res.json(global.status.url)
    if (!url.match('youtu.be') && !url.match('youtube.com')) return res.json(global.status.invalidURL)
    let result = await yt.ytv(url, quality)
