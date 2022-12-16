@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/neoxr/rest-api-web#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "cheerio": "~1.0.0-rc.5",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
