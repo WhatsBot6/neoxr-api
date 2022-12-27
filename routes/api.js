@@ -1,6 +1,6 @@
 const express = require('express'),
    router = express.Router(),
-   yt = new(require('../lib/yt'))
+   yt = new(require('../lib/yt')),
    { igh } = require('../lib/ig')
 
 router.get('/music', async (req, res) => {
