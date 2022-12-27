@@ -54,12 +54,4 @@ router.get('/yts', async (req, res) => {
    res.type('json').send(JSON.stringify(result, null, 2))
 })
 
-router.get('/igh', async (req, res) => {
-   let url = req.query.url
-   if (!url) return res.json(global.status.url)
-   if (!url.match(/^(?:https?:\/\/)?(?:www\.)?(?:instagram\.com\/)(?:s\/)(?:\S+)?$/)) return res.json(global.status.invalidURL)
-   let result = await igh(url)
-   res.json(result)
-})
-
 module.exports = router
