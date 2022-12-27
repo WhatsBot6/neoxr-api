@@ -1,7 +1,6 @@
 const express = require('express'),
    router = express.Router(),
-   yt = new(require('../lib/yt')),
-   { igh } = require('../lib/ig')
+   yt = new(require('../lib/yt'))
 
 router.get('/music', async (req, res) => {
    let q = req.query.q
