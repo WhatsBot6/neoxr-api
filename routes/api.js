@@ -27,6 +27,15 @@ router.get('/analyze', async (req, res) => {
    res.type('json').send(JSON.stringify(result, null, 2))
 })
 
+router.get('/fetch', async (req, res) => {
+   let { url, type, quality } = req.query
+   if (!url) return res.json(global.status.url)
+   if (!url.match('youtu.be') && !url.match('youtube.com')) return res.json(global.status.invalidURL)
+   let result = await Y2mate.fetch(url, type, quality)
+   res.header('Content-Type: application/json')
+   res.type('json').send(JSON.stringify(result, null, 2))
+})
+
 router.get('/yta', async (req, res) => {
    let url = req.query.url
    if (!url) return res.json(global.status.url)
